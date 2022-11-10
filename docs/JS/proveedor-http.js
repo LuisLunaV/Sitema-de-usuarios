@@ -1,10 +1,10 @@
-// const url = (window.location.pathname.split('/').reverse()[0] === 'index.html')?
-// 'https://crud-mysql-new-production.up.railway.app/api/auth/login':
-// 'https://crud-mysql-new-production.up.railway.app/api/usuarios/';
-
 const url = (window.location.pathname.split('/').reverse()[0] === 'index.html')?
-'http://localhost:8080/api/auth/login':
-'http://localhost:8080/api/usuarios/';
+'https://crud-mysql-new-production.up.railway.app/api/auth/login':
+'https://crud-mysql-new-production.up.railway.app/api/usuarios/';
+
+// const url = (window.location.pathname.split('/').reverse()[0] === 'index.html')?
+// 'http://localhost:8080/api/auth/login':
+// 'http://localhost:8080/api/usuarios/';
 
 
 //Registramos el usuario
