@@ -1,0 +1,191 @@
+:root{
+    --fuentePrincipal: 'Raleway', sans-serif;
+}
+
+nav a{
+    color: #fff !important;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilidades */
+.violeta{
+    color: #EC407A;
+}
+.centrar-texto{
+    text-align: center;
+}
+
+
+/******** Encabezado *********/
+.inicio-form{
+    padding-top: 2rem;
+}
+.div-welcome{
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    }
+
+
+/* Encabezado*/
+
+.encabezado{
+    background-color: #ECF0F1 ;
+    /* background-image: linear-gradient(to left, #e3faff, #c8f4fd, #abeffb, #8be9f8, #62e3f5); */
+    padding: 0 0 1.5rem 0;
+}
+.text-information{
+    color: #393939;
+    padding: 0 3rem;
+    text-align: left;
+}
+.text-information h1{
+    font-size: 3rem;
+    padding-top: 5rem;
+    font-family: var(--fuentePrincipal);
+    font-weight: 700;
+}
+
+.text-information h2{
+    font-family: var(--fuentePrincipal);
+    font-weight: 600;
+}
+.text-information h2 span{
+    font-weight: 700;
+}
+
+
+.p-large{
+    font-weight: 400;
+    font-family: var(--fuentePrincipal);
+    color: #626262;
+}
+
+@media (min-width: 768px){ 
+    .inicio-form{
+        padding-right: 2rem;
+    }
+    .div-welcome{
+        display: flex;
+        flex-direction: row;
+        align-items:initial;
+        }
+    .div-ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .div-ul ul{
+        margin-right: 2rem;
+    }
+ }
+
+ /* ****************************** */
+
+/******** Mis servicios *********/
+
+.mis-servicios{
+    height: auto;
+}
+
+.titulo-mis-servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem 0 2rem;
+    font-family: var(--fuentePrincipal);
+}
+
+.titulo-mis-servicios h2{
+font-weight: 700;
+}
+
+.titulo-mis-servicios p{
+    text-align: justify;
+    }
+
+    .card-boton{
+        background: #FFD43B;
+        border-top: solid 2px #183153;
+        border-right: solid 2px #183153;
+        border-bottom: solid 7px #183153;
+        border-left: solid 2px #183153;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        width: auto;
+    }
+    .card-boton:hover{
+        background: #fab005;
+        cursor: pointer;
+    }
+
+    .card-boton a{
+        color: #183153;
+        font-family: var(--fuentePrincipal);
+        font-weight: 700;
+        text-decoration: none;
+    }
+.contenedor-mis-servicios{
+    padding: 3rem;
+}
+
+.contenedor-de-servicio{
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: -1px 7px 7px -1px rgba(15,15,15,0.45);
+}
+
+.titulo-de-servicios{
+    background: #183153;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.informacion-del-servicio{
+    padding: 1rem;
+    text-align: left;
+    font-family: var(--fuentePrincipal);
+}
+
+.informacion-del-servicio h3{
+    padding: 1rem 0;
+    font-weight: 700;
+}
+
+.informacion-del-servicio p{
+    font-weight: 400;
+    line-height:1.7;
+}
+
+@media (min-width: 769px){ 
+  .card-boton{
+width: 15%;
+  }
+    .titulo-mis-servicios p{
+        text-align: center;
+    }
+
+.mis-servicios{
+    height: 100vh;
+}
+.contenedor-mis-servicios{
+    display:flex;
+    flex-direction: row;
+
+}
+
+.contenedor-de-servicio{
+    margin: 0 1rem;
+}
+
+ }
