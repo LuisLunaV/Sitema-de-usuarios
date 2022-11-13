@@ -45,11 +45,14 @@ const postLogin = async( formulario )=>{
                 'Content-Type':'application/json'
             },
         });
-        // console.log(await resp.json())
 
     //Si el registro se realiza con exito, que nos regresa nuevamente a la pagina principal 
     if( resp.ok ){
+        const { token } = await resp.json();
+        localStorage.setItem( 'token', token );
         window.location = './HTML/principal.html';
+        
+        
     }
     else{
         //Si el registro falla, que nos envie el error desde back-end
