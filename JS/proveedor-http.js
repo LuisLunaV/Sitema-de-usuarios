@@ -6,6 +6,24 @@ const url = (window.location.pathname.split('/').reverse()[0] === 'index.html')?
 // 'http://localhost:8080/api/auth/login':
 // 'http://localhost:8080/api/usuarios/';
 
+//Mostrar todos los usuarios
+const getUsuarios = async()=>{
+
+    try {
+        
+        const resp = await fetch( url );
+        
+        if( resp.ok ){
+            const { users } = await resp.json();
+            return users;
+        
+        }else throw 'No se pudo realizar la peticion';
+        
+    } catch (error) {
+        throw err;        
+    }
+    
+};
 
 //Registramos el usuario
 const postUsuarios = async( formulario )=>{
@@ -35,6 +53,7 @@ const postUsuarios = async( formulario )=>{
    
 };
 
+//Autenticacion de usuarios
 const postLogin = async( formulario )=>{
     try {
         const resp = await fetch( url ,{
@@ -48,8 +67,9 @@ const postLogin = async( formulario )=>{
 
     //Si el registro se realiza con exito, que nos regresa nuevamente a la pagina principal 
     if( resp.ok ){
-        const { token } = await resp.json();
+        const {token , user:{ user_rol} } = await resp.json();
         localStorage.setItem( 'token', token );
+        localStorage.setItem('rol', user_rol);
         window.location = './HTML/principal.html';
         
         
@@ -67,6 +87,7 @@ const postLogin = async( formulario )=>{
 };
 
 export{
+    getUsuarios,
     postUsuarios,
     postLogin
 }
