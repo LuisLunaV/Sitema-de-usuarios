@@ -83,6 +83,18 @@ const putUsuario = async( { id, ...body } )=>{
 
 }
 
+const deleteUsuario = async( id )=>{
+    // console.log(id)
+    try {
+        await fetch(`${ url }/${ id }`,{
+            method: 'DELETE'
+        });
+        
+    } catch (error) {
+        throw error;
+    }
+}
+
 //Autenticacion de usuarios
 const postLogin = async( formulario )=>{
     try {
@@ -121,5 +133,6 @@ export{
     getUsuarioID,
     putUsuario,
     postUsuarios,
+    deleteUsuario,
     postLogin
 }

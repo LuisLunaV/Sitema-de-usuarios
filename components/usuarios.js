@@ -14,7 +14,7 @@ const mostrarUsuarios =( { user_id, user_name, user_email, user_rol } )=>{
       <td>
       <div class="btn-group" role="group" aria-label="">
       <button type="button" name='editar' class="btn btn-primary" value='${ user_id }'>Editar</button>
-      <button type="button" name='elimina' class="btn btn-danger" value='${ user_id }'>Eliminar</button>
+      <button type="button" name='eliminar' class="btn btn-danger" value='${ user_id }'>Eliminar</button>
       </div>
       </td>
     </tr>

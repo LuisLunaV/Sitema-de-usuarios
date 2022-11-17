@@ -1,12 +1,12 @@
-import { getUsuarioID,putUsuario } from "./index.js";
+import { getUsuarioID,putUsuario,deleteUsuario } from "./index.js";
 import { editarUsuarios } from '../components/usuarios.js';
 
 const tbody = document.querySelector('tbody');
 
 tbody.addEventListener('click', async( event )=>{
 const elemento = event.target.name;
-const id = event.target.value;
-
+const id       = event.target.value;
+const usuario  = event.target.parentElement.parentElement.parentElement;
 
 if( elemento === 'editar'){
 
@@ -16,6 +16,17 @@ if( elemento === 'editar'){
     editarUsuarios( usuario );
     
     modal.show();
+}
+
+if( elemento === 'eliminar'){
+   const confirmacion = confirm('Esta seguro que desea eliminar el usuario');
+   
+   if( !confirmacion ) return;
+   
+   await deleteUsuario( id );
+
+   tbody.removeChild( usuario );
+
 }
 });
 
