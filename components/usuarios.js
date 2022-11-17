@@ -42,22 +42,11 @@ const editarUsuarios =( {user_id, user_name, user_email, user_rol } )=>{
         </div>
 
         <div class="mb-3">
-
           <label for="password" class="form-label">Rol</label>
-
-          <div class="form-check">
-          <input type="radio" name="rol" id="user" value="Usuario" ${( user_rol === 'USER_ROL')?'checked':''}/>
-          <label for="user" class="label-1-5rem">
-          Usuario
-          </label>
-          </div>
-          <div class="form-check">
-          <input type="radio" name="rol" id="admin" value="Administrador"   ${( user_rol === 'ADMIN_ROL')?'checked':''}/>
-          <label for="admin" class="label-1-5rem">
-          Administrador
-          </label>
-          </div>
-
+          <select class="form-select" name="user_rol" id="user_rol" required>
+          <option value="USER_ROL" ${(user_rol === 'USER_ROL')?'selected':''}>Usario</option>
+          <option value="ADMIN_ROL" ${(user_rol === 'ADMIN_ROL')?'selected':''}>Administrador</option>
+          </select>
         </div>
 
         <div class="d-grid gap-2 text-center">
@@ -68,11 +57,11 @@ const editarUsuarios =( {user_id, user_name, user_email, user_rol } )=>{
       modal.innerHTML = html;
 }
 
+//Obtenemos los usuarios del back-end.
+const { rows } = await getUsuarios();
 
-const usuarios = await getUsuarios();
-usuarios.forEach( mostrarUsuarios);
-
-// editarUsuarios();
+//Enviamos la informacion a una funcion que mostrara los datos al cliente.
+rows.forEach( mostrarUsuarios);
 
 export{
   editarUsuarios

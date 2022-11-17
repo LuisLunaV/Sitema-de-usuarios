@@ -11,9 +11,10 @@ const id = event.target.value;
 if( elemento === 'editar'){
 
     const modal = new bootstrap.Modal(document.getElementById('modelId'),{ keyboard: false, });
-   
+    
     const usuario = await getUsuarioID( id );
     editarUsuarios( usuario );
+    
     modal.show();
 }
 });
@@ -32,6 +33,9 @@ const formEditar =()=>{
         }
 
        await putUsuario(formData);
+       setTimeout(()=>{
+        location.reload();
+       },500)
 
     })
 };
