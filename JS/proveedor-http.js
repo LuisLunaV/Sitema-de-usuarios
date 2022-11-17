@@ -25,6 +25,19 @@ const getUsuarios = async()=>{
     
 };
 
+//Buscar usuario
+const getUsuarioID = async( id )=>{
+    try{
+        const resp = await fetch( `${url}/${id}`)
+        const { user } = await resp.json();
+        
+        return user;
+    }catch( err ){
+        throw err;
+    }
+    }
+
+
 //Registramos el usuario
 const postUsuarios = async( formulario )=>{
 
@@ -52,6 +65,23 @@ const postUsuarios = async( formulario )=>{
     }
    
 };
+
+//Actualizar el usuario
+const putUsuario = async( { id, ...body } )=>{
+
+    try {
+        await fetch(`${url}/${id}`,{
+            method: 'PUT',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        });
+    } catch (error) {
+        throw error;
+    }
+
+}
 
 //Autenticacion de usuarios
 const postLogin = async( formulario )=>{
@@ -88,6 +118,8 @@ const postLogin = async( formulario )=>{
 
 export{
     getUsuarios,
+    getUsuarioID,
+    putUsuario,
     postUsuarios,
     postLogin
 }
