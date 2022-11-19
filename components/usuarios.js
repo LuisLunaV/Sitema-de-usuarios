@@ -1,3 +1,4 @@
+import { buscarUsuarios } from "../JS/buscar-usuario.js";
 import { getUsuarios } from "../JS/proveedor-http.js";
 
 const tbody = document.querySelector('tbody');
@@ -6,7 +7,7 @@ const modal = document.querySelector('.form-editar');
 const mostrarUsuarios =( { user_id, user_name, user_email, user_rol } )=>{
 
     const html =`
-    <tr class="tr-info">
+    <tr class="tr-info" name='${user_name}'>
       <th class='alinear' scope="row">${user_id}</th>
       <td class='alinear'>${user_name}</td>
       <td class='alinear'>${user_email}</td>
@@ -58,10 +59,13 @@ const editarUsuarios =( {user_id, user_name, user_email, user_rol } )=>{
 }
 
 //Obtenemos los usuarios del back-end.
-const { rows } = await getUsuarios();
+const usuarios = await getUsuarios();
 
-//Enviamos la informacion a una funcion que mostrara los datos al cliente.
-rows.forEach( mostrarUsuarios);
+//Enviamos la informacion a una funcion que mostrara los datos al cliente en elementos tr en html.
+usuarios.forEach( mostrarUsuarios);
+ 
+//Enviamos los elementos tr para filtrar la busqueda en el archivo "buscar-usuarios.js".
+buscarUsuarios( document.querySelectorAll('.tr-info') );
 
 export{
   editarUsuarios

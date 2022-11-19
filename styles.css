@@ -19,6 +19,9 @@ img{
     text-align: center;
 }
 
+.filter{
+    display: none;
+}
 
 /******** Encabezado *********/
 .inicio-form{
