@@ -45,7 +45,7 @@ const editarUsuarios =( {user_id, user_name, user_email, user_rol } )=>{
         <div class="mb-3">
           <label for="password" class="form-label">Rol</label>
           <select class="form-select" name="user_rol" id="user_rol" required>
-          <option value="USER_ROL" ${(user_rol === 'USER_ROL')?'selected':''}>Usario</option>
+          <option value="USER_ROL" ${(user_rol === 'USER_ROL')?'selected':''}>Usuario</option>
           <option value="ADMIN_ROL" ${(user_rol === 'ADMIN_ROL')?'selected':''}>Administrador</option>
           </select>
         </div>

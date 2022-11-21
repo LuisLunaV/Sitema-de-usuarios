@@ -11,6 +11,16 @@ img{
     display: block;
 }
 
+footer{
+    color: #fff;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Utilidades */
 .violeta{
     color: #EC407A;
@@ -179,7 +189,7 @@ width: 15%;
     }
 
 .mis-servicios{
-    height: 100vh;
+    height: 106vh;
 }
 .contenedor-mis-servicios{
     display:flex;
@@ -192,3 +202,31 @@ width: 15%;
 }
 
  }
+
+
+/******** Pie de pagina *********/
+.pie-contacto{
+    padding-top: 0.8rem;
+    font-weight: 600;
+    height: 50%;
+    width: 100%;
+    border-bottom:solid 3px #fab005;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.redes-de-contacto{
+    height: 50%;
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.redes-de-contacto a{
+    color: #fff;
+    
+}
+
+
+ 
