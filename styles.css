@@ -44,6 +44,10 @@ footer{
     align-items: center;
     }
 
+    .adminPass{
+        color: red;
+        font-weight: 700;
+    }
 
 /* Encabezado*/
 
