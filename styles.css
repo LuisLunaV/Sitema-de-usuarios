@@ -45,7 +45,7 @@ footer{
     }
 
     .adminPass{
-        color: red;
+        color: red !important;
         font-weight: 700;
     }
 
