@@ -43,7 +43,10 @@ const formEditar =()=>{
             }
         }
 
-       await putUsuario(formData);
+    
+        formData.user_name = formData.user_name.toUpperCase();
+    
+        await putUsuario(formData);
        setTimeout(()=>{
         location.reload();
        },500)
